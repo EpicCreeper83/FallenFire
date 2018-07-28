@@ -49,7 +49,7 @@ body {
 <p>This is your userName</p>
 <input id="userName" class="user-name" value="Your name">
 <button onclick="updateName()">Send now</button>
-<p>Send a message to index.html.</p>
+<p>Send a message to others</p>
 <input class="message-text" placeholder="Your message">
 <button class="send">Send now</button>
 
@@ -76,7 +76,6 @@ if ('BroadcastChannel' in window) {
 	send.addEventListener("click", () => {
 		channel.postMessage(userName + ": " + "<span>" + messageText.value + "</span>");
 		createMessage("You: " + messageText.value);
-		messageText.value = "";
 	}, false);
 
 	channel.addEventListener("message", (e) => {
